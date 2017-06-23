@@ -323,7 +323,7 @@ void CVisuals::Watermark()
 	rainbow += 0.005f;
 	if( rainbow > 1.f )
 		rainbow = 0.f;
-	D::DrawString( F::Watermark, 5, 11, Color::FromHSB( rainbow, 1.f, 1.f ), FONT_LEFT, "%s", charenc( "TEAMGAMERFOOD.COM" ) );
+	D::DrawString( F::Watermark, 5, 11, Color::FromHSB( rainbow, 3.f, 1.f ), FONT_LEFT, "%s", charenc( "sample text xd" ) );
 }
 
 void CVisuals::PlayerBox( float x, float y, float w, float h, Color clr )
