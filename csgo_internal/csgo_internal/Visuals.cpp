@@ -201,7 +201,7 @@ void CVisuals::DrawGlow()
 
 			case 29:
 				if( Vars.Visuals.Filter.C4 )
-					glowEntity->set( Color( 84, 147, 230, 250 ) );
+					glowEntity->set( Color( 255, 147, 230, 250 ) );
 
 				break;
 
@@ -323,7 +323,8 @@ void CVisuals::Watermark()
 	rainbow += 0.005f;
 	if( rainbow > 1.f )
 		rainbow = 0.f;
-	D::DrawString( F::Watermark, 5, 11, Color::FromHSB( rainbow, 3.f, 1.f ), FONT_LEFT, "%s", charenc( "sample text xd" ) );
+	D::DrawString( F::Watermark, 5, 11, Color::FromHSB( rainbow, 3.f, 1.f ), FONT_LEFT, "%s", charenc( "private paste >:(" ) );
+	D::DrawString( F::Watermark, 6, 12, Color::FromHSB( rainbow, 3.f, 1.f ), FONT_LEFT, "%s", charenc( "by Pussy Destroyer" ) );
 }
 
 void CVisuals::PlayerBox( float x, float y, float w, float h, Color clr )
@@ -490,16 +491,16 @@ void CVisuals::DrawCrosshair( Color color )
 
 	if( Vars.Visuals.CrosshairStyle == 3 )
 	{
+		D::DrawLine( drX, drY, drX, drY + 5, color );
+		D::DrawLine( drX, drY + 5, drX - 5, drY + 5, color );
+
+		D::DrawLine( drX, drY, drX - 5, drY, color );
+		D::DrawLine( drX - 5, drY, drX + 5, drY - 5, color );
+
 		D::DrawLine( drX, drY, drX, drY - 5, color );
 		D::DrawLine( drX, drY - 5, drX + 5, drY - 5, color );
 
 		D::DrawLine( drX, drY, drX + 5, drY, color );
 		D::DrawLine( drX + 5, drY, drX + 5, drY + 5, color );
-
-		D::DrawLine( drX, drY, drX, drY + 5, color );
-		D::DrawLine( drX, drY + 5, drX - 5, drY + 5, color );
-
-		D::DrawLine( drX, drY, drX - 5, drY, color );
-		D::DrawLine( drX - 5, drY, drX - 5, drY - 5, color );
 	}
 }
